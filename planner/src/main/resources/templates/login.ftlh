@@ -2,6 +2,7 @@
 
 <@main.renderWith>
 
+    <h2 class="h2_for_css">Войдите</h2>
     <div class="d-flex justify-content-center">
         <div class="mx-3">
             <form action="/login" method="post">
@@ -13,20 +14,23 @@
                 </#if>
                 <div>
                     <label class="flex flex-v-center ">
-                        <span class="label-input-text">Адрес почты:</span>
-                        <input class="form-control mb-2" type="email" name="username"  value="${(dto.email)!''}" autofocus >
+                        <span class="label-input-text">Email:</span>
+                        <input class="form-control mb-2" type="email" name="username" placeholder="ваш адрес почты"    autofocus >
                     </label>
                 </div>
                 <div>
                     <label class="flex flex-v-center label-input-text">
-                        <span class="label-input-text">Пароль:</span>
-                        <input type="password" class="form-control mb-2" name="password" value="">
+                        <span class="label-input-text">Password:</span>
+                        <input type="password" class="form-control mb-2" name="password" placeholder="пароль" value="">
                     </label>
                 </div>
                 <div>
                     <button class="btn btn-outline-primary btn-block"type="submit">Войти!</button>
                 </div>
             </form>
+            <div>
+                <button class="btn btn-outline-primary btn-block" onclick="location.href='/registration'">Registration</button>
+            </div>
         </div>
     </div>
 </@main.renderWith>

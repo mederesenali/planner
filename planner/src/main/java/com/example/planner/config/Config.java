@@ -1,4 +1,4 @@
-package com.example.daillyplanner.config;
+package com.example.planner.config;
 
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -36,7 +36,7 @@ public class Config extends WebSecurityConfigurerAdapter {
                 .invalidateHttpSession(true);
 
         http.authorizeRequests()
-                .antMatchers("/profile","/createPost","/createComment")
+                .antMatchers("/profile","/createNote","/deleteNote/{id}")
                 .authenticated();
 
         http.authorizeRequests()

@@ -1,7 +1,6 @@
-package com.example.daillyplanner.model;
+package com.example.planner.model;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,18 +9,18 @@ import javax.persistence.Id;
 
 @Data
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+   private Integer id;
+    private String name;
     private String email;
     private String password;
-    private String name;
     @Builder.Default
     private boolean enabled=true;
     @Builder.Default
     private String role="USER";
-    public User(){
-
-    }
 }
